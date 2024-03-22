@@ -1,21 +1,21 @@
-const button = document.getElementById("button");
-const box = document.getElementById("box");
+// const button = document.getElementById("button");
+// const box = document.getElementById("box");
 
-const color = document.getElementById("color");
-const form = document.getElementById("form");
-const width = document.getElementById("width");
-const height = document.getElementById("height");
+// const color = document.getElementById("color");
+// const form = document.getElementById("form");
+// const width = document.getElementById("width");
+// const height = document.getElementById("height");
 
-button.addEventListener("click", () => {
-  if (color.value === "") return alert("Please select a color");
+// button.addEventListener("click", () => {
+//   if (color.value === "") return alert("Please select a color");
 
-  box.style = `
-  background-color: ${color}.value;
-  width: ${width.value};
-  border-radius: ${form.value === "circle" ? "50%" : "0"}
-  height: ${height.value};
-  `;
-});
+//   box.style = `
+//   background-color: ${color}.value;
+//   width: ${width.value};
+//   border-radius: ${form.value === "circle" ? "50%" : "0"}
+//   height: ${height.value};
+//   `;
+// });
 // function createDiv() {
 //   const color = document.getElementById("color").value;
 //   const width = document.getElementById("width").value;
@@ -28,3 +28,8 @@ button.addEventListener("click", () => {
 
 //   document.getElementById("result").appendChild(div);
 // }
+
+// --------------------------------------------------------
+// ----------
+let arr = [1, 2, 3];
+console.log(...arr, [4, 5, 6]);
