@@ -31,5 +31,16 @@
 
 // --------------------------------------------------------
 // ----------
-let arr = [1, 2, 3];
-console.log(arr.concat([1, 2]));
+
+let arr = [1, 2, 5, 3, 1];
+
+function testPeaks(arr) {
+  let peak = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > i) {
+      peak += i;
+    }
+  }
+  return peak;
+}
+console.log(testPeaks(arr));
