@@ -35,12 +35,12 @@
 let arr = [1, 2, 5, 3, 1];
 
 function testPeaks(arr) {
-  let peak = 0;
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] > i) {
-      peak += i;
+  let peak = [];
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] > peak) {
+      peak.push += i;
     }
   }
-  return peak;
+  console.log(peak, peak[0]);
 }
 console.log(testPeaks(arr));
