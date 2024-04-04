@@ -40,15 +40,45 @@
 // }
 // console.log(testPeaks(arr));
 // -------------------
-var isPalindrome = function (x) {
-  let str = Math.abs(x).toString();
-  for (let i = 0; i < str.length; i++) {
-    for (let j = str.length - 1; j--; ) {
-      if (str[i] === str[j]) {
-        return true;
-      }
-      return false;
+// var isPalindrome = function (x) {
+//   let str = Math.abs(x).toString();
+//   for (let i = 0; i < str.length; i++) {
+//     for (let j = str.length - 1; j--; ) {
+//       if (str[i] === str[j]) {
+//         return true;
+//       }
+//       return false;
+//     }
+//   }
+// };
+// console.log(isPalindrome(121));
+// ------------------
+function romanToInt(roman) {
+  const romanValues = {
+    I: 1,
+    V: 5,
+    X: 10,
+    L: 50,
+    C: 100,
+    D: 500,
+    M: 1000,
+  };
+
+  let total = 0;
+  let prevValue = 0;
+
+  for (let i = 0; i < roman.length; i++) {
+    const currentValue = romanValues[roman[i]];
+
+    if (currentValue > prevValue) {
+      total += currentValue - 2 * prevValue;
+    } else {
+      total += currentValue;
     }
+
+    prevValue = currentValue;
   }
-};
-console.log(isPalindrome(121));
+
+  return total;
+}
+console.log(romanToInt("X" + "II"));
