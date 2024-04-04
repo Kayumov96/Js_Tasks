@@ -41,13 +41,14 @@
 // console.log(testPeaks(arr));
 // -------------------
 var isPalindrome = function (x) {
-  for (let i = 0; i < x.length; i++) {
-    for (let j = x.length - 1; j--; ) {
-      if (x[i] === x[j]) {
+  let str = Math.abs(x).toString();
+  for (let i = 0; i < str.length; i++) {
+    for (let j = str.length - 1; j--; ) {
+      if (str[i] === str[j]) {
         return true;
       }
       return false;
     }
   }
 };
-console.log(isPalindrome("121"));
+console.log(isPalindrome(121));
