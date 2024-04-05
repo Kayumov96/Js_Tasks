@@ -1,16 +1,18 @@
-// const button = document.getElementById("button");
-// const box = document.getElementById("box");
+const button = document.getElementById("button");
+const box = document.getElementById("box");
 
-// const color = document.getElementById("color");
-// const form = document.getElementById("form");
-// const width = document.getElementById("width");
-// const height = document.getElementById("height");
-
+const color = document.getElementById("color");
+const form = document.getElementById("form");
+const width = document.getElementById("width");
+const height = document.getElementById("height");
+button.addEventListener("click", () => {
+  console.log("Button clicked");
+});
 // document.getElementById("button").addEventListener("click", () => {
-//   console.log("button clicked", color?.value, form, width, height);
-//   box?.style=`
-//   background-color: ${color}?.value;
-//   height: ${height}?.value
+//   console.log("button clicked", color.value, form, width, height);
+//   box.style=`
+//   background-color: ${color}.value;
+//   height: ${height}.value
 //   `
 // result.style = `
 // background-color: ${color}.value;
@@ -18,11 +20,10 @@
 // height: ${height.value}px;
 // `;
 // if (form.value === "square") {
-//   result?.style?.borderRadius = "0";
+//   result.style.borderRadius = "0";
 // } else if (form.value === "circle") {
-//   result?.style?.borderRadius = "50%";
-// });
-// });
+//   result?.style.borderRadius = "50%";
+// }});
 
 // --------------------------------------------------------
 // ----------
@@ -53,32 +54,32 @@
 // };
 // console.log(isPalindrome(121));
 // ------------------
-function romanToInt(roman) {
-  const romanValues = {
-    I: 1,
-    V: 5,
-    X: 10,
-    L: 50,
-    C: 100,
-    D: 500,
-    M: 1000,
-  };
+// function romanToInt(roman) {
+//   const romanValues = {
+//     I: 1,
+//     V: 5,
+//     X: 10,
+//     L: 50,
+//     C: 100,
+//     D: 500,
+//     M: 1000,
+//   };
 
-  let total = 0;
-  let prevValue = 0;
+//   let total = 0;
+//   let prevValue = 0;
 
-  for (let i = 0; i < roman.length; i++) {
-    const currentValue = romanValues[roman[i]];
+//   for (let i = 0; i < roman.length; i++) {
+//     const currentValue = romanValues[roman[i]];
 
-    if (currentValue > prevValue) {
-      total += currentValue - 2 * prevValue;
-    } else {
-      total += currentValue;
-    }
+//     if (currentValue > prevValue) {
+//       total += currentValue - 2 * prevValue;
+//     } else {
+//       total += currentValue;
+//     }
 
-    prevValue = currentValue;
-  }
+//     prevValue = currentValue;
+//   }
 
-  return total;
-}
-console.log(romanToInt("X" + "II"));
+//   return total;
+// }
+// console.log(romanToInt("X" + "II"));
