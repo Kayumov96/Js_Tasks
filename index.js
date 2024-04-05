@@ -6,7 +6,18 @@ const form = document.getElementById("form");
 const width = document.getElementById("width");
 const height = document.getElementById("height");
 button.addEventListener("click", () => {
-  console.log("Button clicked");
+  console.log("Button clicked", box.style);
+  box.style = `
+  background: ${color.value};
+  height: ${height.value}px;
+  width: ${width.value}px;;
+  form: ${form.value}px;
+  `;
+  if (form.value === "") {
+    box.style.borderRadius = 0;
+  } else if (form.value === "circle") {
+    box.style.borderRadius = "50%";
+  }
 });
 // document.getElementById("button").addEventListener("click", () => {
 //   console.log("button clicked", color.value, form, width, height);
