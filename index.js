@@ -6,7 +6,7 @@ const form = document.getElementById("form");
 const width = document.getElementById("width");
 const height = document.getElementById("height");
 button.addEventListener("click", () => {
-  console.log("Button clicked", box.style);
+  // console.log("Button clicked", box.style);
   box.style = `
   background: ${color.value};
   height: ${height.value}px;
@@ -94,3 +94,36 @@ button.addEventListener("click", () => {
 //   return total;
 // }
 // console.log(romanToInt("X" + "II"));
+// ------------------
+
+class ListNode {
+  constructor(val) {
+    this.val = val;
+    this.next = null;
+  }
+}
+
+function addTwoNumbers(l1, l2) {
+  const dummyHead = new ListNode(0);
+  let p = l1,
+    q = l2,
+    current = dummyHead;
+  let carry = 0;
+
+  while (p !== null || q !== null) {
+    const x = p !== null ? p.val : 0;
+    const y = q !== null ? q.val : 0;
+    const sum = x + y + carry;
+    carry = Math.floor(sum / 10);
+    current.next = new ListNode(sum % 10);
+    current = current.next;
+    if (p !== null) p = p.next;
+    if (q !== null) q = q.next;
+  }
+
+  if (carry > 0) {
+    current.next = new ListNode(carry);
+  }
+
+  return dummyHead.next;
+}
