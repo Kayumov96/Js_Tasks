@@ -96,34 +96,38 @@ button.addEventListener("click", () => {
 // console.log(romanToInt("X" + "II"));
 // ------------------
 
-class ListNode {
-  constructor(val) {
-    this.val = val;
-    this.next = null;
-  }
-}
+// You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
 
-function addTwoNumbers(l1, l2) {
-  const dummyHead = new ListNode(0);
-  let p = l1,
-    q = l2,
-    current = dummyHead;
-  let carry = 0;
+// You may assume the two numbers do not contain any leading zero, except the number 0 itself.
 
-  while (p !== null || q !== null) {
-    const x = p !== null ? p.val : 0;
-    const y = q !== null ? q.val : 0;
-    const sum = x + y + carry;
-    carry = Math.floor(sum / 10);
-    current.next = new ListNode(sum % 10);
-    current = current.next;
-    if (p !== null) p = p.next;
-    if (q !== null) q = q.next;
-  }
+// class ListNode {
+//   constructor(val) {
+//     this.val = val;
+//     this.next = null;
+//   }
+// }
 
-  if (carry > 0) {
-    current.next = new ListNode(carry);
-  }
+// function addTwoNumbers(l1, l2) {
+//   const dummyHead = new ListNode(0);
+//   let p = l1,
+//     q = l2,
+//     current = dummyHead;
+//   let carry = 0;
 
-  return dummyHead.next;
-}
+//   while (p !== null || q !== null) {
+//     const x = p !== null ? p.val : 0;
+//     const y = q !== null ? q.val : 0;
+//     const sum = x + y + carry;
+//     carry = Math.floor(sum / 10);
+//     current.next = new ListNode(sum % 10);
+//     current = current.next;
+//     if (p !== null) p = p.next;
+//     if (q !== null) q = q.next;
+//   }
+
+//   if (carry > 0) {
+//     current.next = new ListNode(carry);
+//   }
+
+//   return dummyHead.next;
+// }
