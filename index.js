@@ -152,3 +152,4 @@ function lengthOfLongestSubstring(s) {
 
   return maxLength;
 }
+console.log(lengthOfLongestSubstring("abaabaabssbsbbaa"));
