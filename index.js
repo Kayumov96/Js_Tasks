@@ -131,3 +131,24 @@ button.addEventListener("click", () => {
 
 //   return dummyHead.next;
 // }
+// ------------------
+// Given a string s, find the length of the longest
+// substring
+//  without repeating characters.
+
+function lengthOfLongestSubstring(s) {
+  const charIndex = {};
+  let maxLength = 0;
+  let start = 0;
+
+  for (let end = 0; end < s.length; end++) {
+    const char = s[end];
+    if (char in charIndex && charIndex[char] >= start) {
+      start = charIndex[char] + 1;
+    }
+    charIndex[char] = end;
+    maxLength = Math.max(maxLength, end - start + 1);
+  }
+
+  return maxLength;
+}
