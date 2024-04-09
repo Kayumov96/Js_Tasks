@@ -136,20 +136,37 @@ button.addEventListener("click", () => {
 // substring
 //  without repeating characters.
 
-function lengthOfLongestSubstring(s) {
-  const charIndex = {};
-  let maxLength = 0;
-  let start = 0;
+// function lengthOfLongestSubstring(s) {
+//   const charIndex = {};
+//   let maxLength = 0;
+//   let start = 0;
 
-  for (let end = 0; end < s.length; end++) {
-    const char = s[end];
-    if (char in charIndex && charIndex[char] >= start) {
-      start = charIndex[char] + 1;
-    }
-    charIndex[char] = end;
-    maxLength = Math.max(maxLength, end - start + 1);
+//   for (let end = 0; end < s.length; end++) {
+//     const char = s[end];
+//     if (char in charIndex && charIndex[char] >= start) {
+//       start = charIndex[char] + 1;
+//     }
+//     charIndex[char] = end;
+//     maxLength = Math.max(maxLength, end - start + 1);
+//   }
+
+//   return maxLength;
+// }
+// console.log(lengthOfLongestSubstring("abaabaabssbsbbaa"));
+// -----------------
+
+// Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.
+
+// The overall run time complexity should be O(log (m+n)).
+
+function findMedianSortedArrays(nums1, nums2) {
+  const merged = [...nums1, ...nums2].sort((a, b) => a - b);
+  const n = merged.length;
+  const mid = Math.floor(n / 2);
+
+  if (n % 2 === 0) {
+    return (merged[mid - 1] + merged[mid]) / 2;
+  } else {
+    return merged[mid];
   }
-
-  return maxLength;
 }
-console.log(lengthOfLongestSubstring("abaabaabssbsbbaa"));
