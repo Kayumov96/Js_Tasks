@@ -159,14 +159,30 @@ button.addEventListener("click", () => {
 
 // The overall run time complexity should be O(log (m+n)).
 
-function findMedianSortedArrays(nums1, nums2) {
-  const merged = [...nums1, ...nums2].sort((a, b) => a - b);
-  const n = merged.length;
-  const mid = Math.floor(n / 2);
+// function findMedianSortedArrays(nums1, nums2) {
+//   const merged = [...nums1, ...nums2].sort((a, b) => a - b);
+//   const n = merged.length;
+//   const mid = Math.floor(n / 2);
 
-  if (n % 2 === 0) {
-    return (merged[mid - 1] + merged[mid]) / 2;
-  } else {
-    return merged[mid];
-  }
-}
+//   if (n % 2 === 0) {
+//     return (merged[mid - 1] + merged[mid]) / 2;
+//   } else {
+//     return merged[mid];
+//   }
+// }
+// ----------------
+// Given a string s, return the longest
+// palindromic
+
+// substring
+//  in s.
+
+// Example 1:
+
+// Input: s = "babad"
+// Output: "bab"
+// Explanation: "aba" is also a valid answer.
+// Example 2:
+
+// Input: s = "cbbd"
+// Output: "bb"
