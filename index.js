@@ -18,6 +18,7 @@ button.addEventListener("click", () => {
   } else if (form.value === "circle") {
     box.style.borderRadius = "50%";
   } else if (form.value === "other") {
+    box.style.borderRadius = getBorders();
   }
 });
 // document.getElementById("button").addEventListener("click", () => {
@@ -188,25 +189,26 @@ button.addEventListener("click", () => {
 // Input: s = "cbbd"
 // Output: "bb"
 // ---------------------
-function longestPalindrome(s) {
-  let longest = "";
+// function longestPalindrome(s) {
+//   let longest = "";
 
-  for (let i = 0; i < s.length; i++) {
-    const odd = expandAroundCenter(s, i, i);
-    const even = expandAroundCenter(s, i, i + 1);
-    const currentLongest = odd.length > even.length ? odd : even;
-    if (currentLongest.length > longest.length) {
-      longest = currentLongest;
-    }
-  }
+//   for (let i = 0; i < s.length; i++) {
+//     const odd = expandAroundCenter(s, i, i);
+//     const even = expandAroundCenter(s, i, i + 1);
+//     const currentLongest = odd.length > even.length ? odd : even;
+//     if (currentLongest.length > longest.length) {
+//       longest = currentLongest;
+//     }
+//   }
 
-  return longest;
-}
+//   return longest;
+// }
 
-function expandAroundCenter(s, left, right) {
-  while (left >= 0 && right < s.length && s[left] === s[right]) {
-    left--;
-    right++;
-  }
-  return s.substring(left + 1, right);
-}
+// function expandAroundCenter(s, left, right) {
+//   while (left >= 0 && right < s.length && s[left] === s[right]) {
+//     left--;
+//     right++;
+//   }
+//   return s.substring(left + 1, right);
+// }
+// ---------------------
