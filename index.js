@@ -5,6 +5,11 @@ const color = document.getElementById("color");
 const form = document.getElementById("form");
 const width = document.getElementById("width");
 const height = document.getElementById("height");
+
+const getBorders = function () {
+  document.appendChild(document.createElement("div"));
+};
+
 button.addEventListener("click", () => {
   // console.log("Button clicked", box.style);
   box.style = `
