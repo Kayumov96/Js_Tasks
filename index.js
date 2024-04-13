@@ -7,7 +7,7 @@ const width = document.getElementById("width");
 const height = document.getElementById("height");
 
 const getBorders = function () {
-  document.appendChild(document.createElement("div"));
+  document.getElementById("container");
 };
 
 button.addEventListener("click", () => {
