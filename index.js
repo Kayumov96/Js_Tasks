@@ -8,6 +8,16 @@ const height = document.getElementById("height");
 
 const getBorders = function () {
   document.getElementById("container");
+  container.innerHTML = "";
+
+  for (let i = 0; i < 4; i++) {
+    const div = document.createElement("div");
+    const input = document.createElement("input");
+    input.type = "text";
+    input.placeholder = `Input ${i + 1}`;
+    div.appendChild(input);
+    container.appendChild(div);
+  }
 };
 
 button.addEventListener("click", () => {
