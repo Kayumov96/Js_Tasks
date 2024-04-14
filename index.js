@@ -19,6 +19,7 @@ const getBorders = function () {
     container.appendChild(div);
   }
 };
+// fjtgrotvut
 
 button.addEventListener("click", () => {
   // console.log("Button clicked", box.style);
