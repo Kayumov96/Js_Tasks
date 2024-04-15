@@ -18,6 +18,8 @@ const getBorders = function () {
     div.appendChild(input);
     container.appendChild(div);
   }
+  if (i) {
+  }
 };
 // fjtgrotvut
 
