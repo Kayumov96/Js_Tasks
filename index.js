@@ -6,21 +6,6 @@ const form = document.getElementById("form");
 const width = document.getElementById("width");
 const height = document.getElementById("height");
 
-const getBorders = function () {
-  document.getElementById("container");
-  container.innerHTML = "";
-
-  for (let i = 0; i < 4; i++) {
-    const div = document.createElement("div");
-    const input = document.createElement("input");
-    input.type = "text";
-    input.placeholder = `Input ${i + 1}`;
-    div.appendChild(input);
-    container.appendChild(div);
-  }
-  if (i) {
-  }
-};
 // fjtgrotvut
 
 button.addEventListener("click", () => {
@@ -39,6 +24,23 @@ button.addEventListener("click", () => {
     box.style.borderRadius = getBorders();
   }
 });
+const getBorders = function () {
+  document.getElementById("container");
+  container.innerHTML = "";
+
+  for (let i = 0; i < 4; i++) {
+    const div = document.createElement("div");
+    const input = document.createElement("input");
+    input.type = "text";
+    input.placeholder = `Input ${i + 1}`;
+    div.appendChild(input);
+    container.appendChild(div);
+  }
+  if (form.value === "other") {
+    // div.style.display = "flex";
+    console.log("");
+  }
+};
 // document.getElementById("button").addEventListener("click", () => {
 //   console.log("button clicked", color.value, form, width, height);
 //   box.style=`
@@ -230,3 +232,29 @@ button.addEventListener("click", () => {
 //   return s.substring(left + 1, right);
 // }
 // ---------------------
+// ZIGZAG
+function convert(s, numRows) {
+  if (numRows === 1) return s; // Edge case: If only one row, return the original string
+
+  const rows = Array.from({ length: numRows }, () => ""); // Array to store each row
+
+  let row = 0;
+  let goingDown = false;
+
+  for (const char of s) {
+    rows[row] += char; // Add the character to the current row
+
+    // Change direction when reaching top or bottom row
+    if (row === 0 || row === numRows - 1) goingDown = !goingDown;
+
+    // Update the row index based on the direction
+    row += goingDown ? 1 : -1;
+  }
+
+  return rows.join(""); // Concatenate all rows to form the converted string
+}
+
+// Example usage:
+const s = "PAYPALISHIRING";
+const numRows = 3;
+console.log(convert(s, numRows));
